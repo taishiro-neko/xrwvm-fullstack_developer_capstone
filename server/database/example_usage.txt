@@ -1,0 +1,6 @@
+On Ubuntu: 
+sudo apt install docker-compose-plugin
+docker compose up  (Instead of docker-compose up)
+
+http://127.0.0.1:3030/fetchDealers/Kansas
+
