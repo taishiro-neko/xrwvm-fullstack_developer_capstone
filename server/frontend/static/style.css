@@ -124,3 +124,50 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+/* contact page layout under the photo */
+.contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 80px 60px;
+}
+
+/* left side: icon */
+.contact-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* vertical separator line */
+.contact-divider {
+  border-left: 2px solid rgb(103, 102, 105);
+  height: 170px;
+  margin: 0 40px;
+}
+
+/* right side: text */
+.contact-right {
+  max-width: 400px; /* optional, just stops it getting too wide */
+}
+
+/* make the contact icon bigger without breaking other pages */
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #00d4ff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
+}
+
+.contact-icon span {
+  font-size: 40px;
+  line-height: 80px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+/* generic inner padding for content inside cards */
+.card-content {
+  padding: 10px 20px;
+}
