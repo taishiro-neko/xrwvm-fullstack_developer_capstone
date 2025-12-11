@@ -8,16 +8,6 @@ def initiate():
         {"name": "Audi", "description": "Great cars. German technology"},
         {"name": "Kia", "description": "Great cars. Korean technology"},
         {"name": "Toyota", "description": "Great cars. Japanese technology"},
-        {"name": "Nebula Dynamics",
-         "description": "Mid-range interstellar haulers for captains on a budget."},
-        {"name": "Starlance Shipyards",
-         "description": "High-performance strike craft with questionable safety margins."},
-        {"name": "Aurora Fleetworks",
-         "description": "Luxury cruisers for admirals, oligarchs, and suspiciously rich cats."},
-        {"name": "Voidwalk Industries",
-         "description": "Experimental prototypes. May or may not return from hyperspace."},
-        {"name": "Quantum Paws Labs",
-         "description": "Compact ships with illegally cute AI copilots."},
     ]
     car_make_instances = []
     for data in car_make_data:
@@ -59,47 +49,7 @@ def initiate():
             "car_make": car_make_instances[4]},
         {"name": "Kluger", "type": "SUV", "year": 2023,
             "car_make": car_make_instances[4]},
-        # Nebula Dynamics (freighters / haulers)
-        {"name": "Nebula Runner", "type": "SUV", "year": 2025,
-            "car_make": car_make_instances[5]},
-        {"name": "Cargo Comet", "type": "SUV", "year": 2025,
-            "car_make": car_make_instances[5]},
-        {"name": "Dustcrawler", "type": "SUV", "year": 2025,
-            "car_make": car_make_instances[5]},
-
-        # Starlance Shipyards (fast attack / fighters)
-        {"name": "Starlance Mk-II", "type": "Sedan", "year": 2025,
-            "car_make": car_make_instances[6]},
-        {"name": "Meteor Fang", "type": "Sedan", "year": 2025,
-            "car_make": car_make_instances[6]},
-        {"name": "Solar Javelin", "type": "Sedan", "year": 2025,
-            "car_make": car_make_instances[6]},
-
-        # Aurora Fleetworks (luxury cruisers)
-        {"name": "Aurora Serenade", "type": "SUV", "year": 2025,
-            "car_make": car_make_instances[7]},
-        {"name": "Celestial Mirage", "type": "SUV", "year": 2025,
-            "car_make": car_make_instances[7]},
-        {"name": "Eclipse Royale", "type": "SUV", "year": 2025,
-            "car_make": car_make_instances[7]},
-
-        # Voidwalk Industries (weird prototypes)
-        {"name": "Void Whisper", "type": "Sedan", "year": 2025,
-            "car_make": car_make_instances[8]},
-        {"name": "Phase Skipper", "type": "Sedan", "year": 2025,
-            "car_make": car_make_instances[8]},
-        {"name": "Graviton Moth", "type": "SUV", "year": 2025,
-            "car_make": car_make_instances[8]},
-
-        # Quantum Paws Labs (small & quirky)
-        {"name": "Starling Cub", "type": "Sedan", "year": 2025,
-            "car_make": car_make_instances[9]},
-        {"name": "Quark Hopper", "type": "Sedan", "year": 2025,
-            "car_make": car_make_instances[9]},
-        {"name": "Photon Pouncer", "type": "Sedan", "year": 2025,
-            "car_make": car_make_instances[9]},
-
-
+        # Add more CarModel instances as needed
     ]
     for data in car_model_data:
         CarModel.objects.create(
