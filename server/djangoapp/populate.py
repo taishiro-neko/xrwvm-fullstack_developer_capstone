@@ -9,13 +9,13 @@ def initiate():
         {"name": "Kia", "description": "Great cars. Korean technology"},
         {"name": "Toyota", "description": "Great cars. Japanese technology"},
         {"name": "Nebula Dynamics",
-         "description": "Mid-range interstellar haulers for captains on a budget."}, # noqa: E501
+         "description": "Mid-range interstellar haulers for captains on a budget."}, # noqa
         {"name": "Starlance Shipyards",
-         "description": "High-performance strike craft with questionable safety margins."}, # noqa: E501
+         "description": "High-performance strike craft with questionable safety margins."}, # noqa
         {"name": "Aurora Fleetworks",
-         "description": "Luxury cruisers for admirals, oligarchs, and suspiciously rich cats."}, # noqa: E501
+         "description": "Luxury cruisers for admirals, oligarchs, and suspiciously rich cats."}, # noqa
         {"name": "Voidwalk Industries",
-         "description": "Experimental prototypes. May or may not return from hyperspace."}, # noqa: E501
+         "description": "Experimental prototypes. May or may not return from hyperspace."}, # noqa
         {"name": "Quantum Paws Labs",
          "description": "Compact ships with illegally cute AI copilots."},
     ]
