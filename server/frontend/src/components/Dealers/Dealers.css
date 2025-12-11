@@ -1,88 +1,248 @@
-table{
-    margin:5px;
-    padding:10px;
-    border: grey solid 1px;
-    width:100%
-  }
-  
-  td{
-    padding:10px;
-    align-self: center;
-    border:solid grey .5px;
-    text-align: center;
-    font-size: large;
-  }
-  
-  .review_panel{
-    display: flex;
-    flex-direction: column;
-    border: solid grey;
-    position: relative;
-    height:7cm;
-    width:6cm;
-    overflow-y: scroll;
-    padding:.3cm;
-    padding-top: 0%;
-    border-radius:10px; 
-    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.5);
-    margin-bottom: .5cm;
-    justify-content: space-between;
-  }
+/* Dealers & reviews – space theme */
 
-  .postreview{
-    margin:20px;
-    padding:10px;
-    font-size: larger;
-  }
+table {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid var(--border-card);
+  width: 100%;
+  background-color: var(--bg-card);
+  border-collapse: collapse;
+}
 
-  th{
-    padding:5px;
-    align-self: center;
-    text-align: center;
-    font-size: large;
-    margin-bottom: 1cm;
-    vertical-align: middle;
-    color: black;
-  }
+td {
+  padding: 10px;
+  align-self: center;
+  border: 0.5px solid var(--border-card);
+  text-align: center;
+  font-size: large;
+  color: #e5f3ff !important;    /* force bright text */
+  background-color: #020617;
+}
 
-  .reviews_panel {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 1cm;
-    overflow-wrap: normal;
-    margin-top: 1cm;
-    align-items: flex-start;
-  }
+th {
+  padding: 5px;
+  align-self: center;
+  text-align: center;
+  font-size: large;
+  margin-bottom: 1cm;
+  vertical-align: middle;
+  color: #38bdf8 !important;     /* neon-ish header text */
+  background-color: #020617;
+}
 
-  .reviewer {
-    margin: 10px; /* Optional margin for spacing */
-    font-style: italic;
-    color: gray;
-    font-size: small;
+
+/* Review list panel */
+.review_panel {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-card);
+  position: relative;
+  height: 7cm;
+  width: 6cm;
+  overflow-y: scroll;
+  padding: 0.3cm;
+  padding-top: 0;
+  border-radius: 16px;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.5cm;
+  justify-content: space-between;
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: var(--text-main);
+}
+
+.postreview {
+  margin: 20px;
+  padding: 10px;
+  font-size: larger;
+  color: var(--text-main);
+}
+
+/* Wrap of multiple review cards */
+.reviews_panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1cm;
+  overflow-wrap: normal;
+  margin-top: 1cm;
+  align-items: flex-start;
+}
+
+/* Review footer text */
+.reviewer {
+  margin: 10px;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: small;
 }
 
 .review {
   margin-top: 1.5cm;
 }
 
+/* Floating emotion icon (if used) */
 .emotion_icon {
   align-self: center;
-  position:fixed;
-    width:40px;
-    height:40px;
-    background-color:#0C9;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    box-shadow: 2px 2px 3px #999;  
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent);
+  color: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.9);
 }
 
+/* Small icon on each review */
 .review_icon {
-  width:40px;
+  width: 40px;
+  cursor: pointer;
+  transition: transform 0.1s ease, border 0.1s ease;
 }
 
 .review_icon:hover {
   transform: scale(1.1);
-  border: solid lightgray;
+  border: 1px solid var(--accent-soft);
+}
+
+/* State dropdown styling */
+#state {
+  background-color: #020617;
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* Options inside the dropdown */
+#state option {
+  background-color: #020617;
+  color: var(--text-main);
+}
+/* Dealer header + subheader text on the Dealer page */
+.dealer-header {
+  color: var(--text-main);
+  margin-top: 10px;
+}
+
+.dealer-subheader {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.review {
+  margin-top: 1.5cm;
+  color: #e5f3ff;
+}
+
+.reviewer {
+  margin: 10px;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: small;
+}
+
+/* Dark sci-fi scrollbar for review cards */
+
+/* WebKit / Blink (Chrome, Edge, etc.) */
+.review_panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.review_panel::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+.review_panel::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+.review_panel::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+.review_panel {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #020617;
+  color: #e5f3ff !important;
+}
+
+
+#review {
+  background-color: #020617;
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+/* Each row with label + input/select */
+.input_field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--text-main);
+}
+
+/* Inputs and selects inside those rows */
+.input_field input,
+.input_field select {
+  background-color: #020617;
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* Options inside the car select dropdown */
+#cars option {
+  background-color: #020617;
+  color: var(--text-main);
+}
+
+/* Post Review button – keep the same style but align with theme */
+.postreview {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: larger;
+  color: #020617;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.postreview:hover {
+  background-color: var(--accent-soft);
+  color: #f9fafb;
+}
+
+/* Style the date input to match the dark theme */
+.input_field input[type="date"] {
+  background-color: #020617;
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* Make the little calendar icon visible on dark background (WebKit browsers) */
+.input_field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);           /* turn it light */
+  cursor: pointer;
+}
+
+.dealer_link {
+  color: white;
+}
+
+.dealer_link:hover {
+  color: #ff9090;
 }

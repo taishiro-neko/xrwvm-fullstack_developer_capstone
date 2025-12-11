@@ -4,14 +4,14 @@ import "../assets/style.css";
 import Header from '../Header/Header';
 import review_icon from "../assets/reviewicon.png"
 
-
-
 const Dealers = () => {
   const [dealersList, setDealersList] = useState([]);
   // let [state, setState] = useState("")
   let [states, setStates] = useState([])
 
-  const dealer_url ="/djangoapp/get_dealers";  
+  // let root_url = window.location.origin
+  let dealer_url ="/djangoapp/get_dealers";
+  
   let dealer_url_by_state = "/djangoapp/get_dealers/";
  
   const filterDealers = async (state) => {
@@ -25,27 +25,26 @@ const Dealers = () => {
       setDealersList(state_dealers)
     }
   }
- 
- useEffect(() => {
-  const fetchDealers = async () => {
+
+  const get_dealers = async ()=>{
     const res = await fetch(dealer_url, {
-      method: "GET",
+      method: "GET"
     });
     const retobj = await res.json();
-    if (retobj.status === 200) {
-      let all_dealers = Array.from(retobj.dealers);
-      let statesList = [];
-      all_dealers.forEach((dealer) => {
-        statesList.push(dealer.state);
+    if(retobj.status === 200) {
+      let all_dealers = Array.from(retobj.dealers)
+      let states = [];
+      all_dealers.forEach((dealer)=>{
+        states.push(dealer.state)
       });
 
-      setStates(Array.from(new Set(statesList)));
-      setDealersList(all_dealers);
+      setStates(Array.from(new Set(states)))
+      setDealersList(all_dealers)
     }
-  };
-
-  fetchDealers();
-}, [dealer_url]);  
+  }
+  useEffect(() => {
+    get_dealers();
+  },[]);  
 
 
 let isLoggedIn = sessionStorage.getItem("username") != null ? true : false;
@@ -78,7 +77,7 @@ return(
      {dealersList.map(dealer => (
         <tr>
           <td>{dealer['id']}</td>
-          <td><a className="dealer_link" href={'/dealer/'+dealer['id']}>{dealer['full_name']}</a></td>
+          <td><a href={'/dealer/'+dealer['id']}>{dealer['full_name']}</a></td>
           <td>{dealer['city']}</td>
           <td>{dealer['address']}</td>
           <td>{dealer['zip']}</td>

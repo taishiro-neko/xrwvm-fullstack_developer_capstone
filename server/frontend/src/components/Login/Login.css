@@ -1,15 +1,16 @@
-.navcontainer{
+/* Nav bar for React login view */
+.navcontainer {
   display: flex;
   flex: 1;
-
   flex-direction: row;
   margin: auto;
   margin-top: 2%;
-  background-color: rgb(97, 64, 128);
+  background: linear-gradient(90deg, #020617, #0b3b66, #111827);
   align-items: flex-start;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
 }
 
-.navitems{
+.navitems {
   display: flex;
   flex-direction: row;
   padding: 20px;
@@ -18,13 +19,14 @@
   justify-self: center;
 }
 
-.nav_item{
-  margin-left:15px;
+.nav_item {
+  margin-left: 15px;
   font-size: 20px;
-  color: azure;
+  color: var(--text-main);
   align-self: center;
 }
 
+/* Login form layout */
 .input_panel {
   display: flex;
   flex-direction: row;
@@ -34,53 +36,93 @@
   justify-self: center;
 }
 
-.input_field{
-  height:40px;
-  width:200px; 
+.input_field {
+  height: 40px;
+  width: 200px;
   font-size: medium;
-  margin:.5cm;
+  margin: 0.5cm;
+  background-color: #020617;
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
 }
 
+.input_field::placeholder {
+  color: var(--text-muted);
+}
 
-.action_button{
+/* Action button (login) */
+.action_button {
   cursor: pointer;
   font-size: large;
-  color: rgb(97, 64, 128);
+  color: #020617;
+  background-color: var(--accent);
   border-radius: 10px;
-  height:40px;
-  padding-left:.5cm;
-  padding-right: .5cm;
-  margin: .5cm;
+  border: none;
+  height: 40px;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  margin: 0.5cm;
+  font-weight: 600;
 }
 
-.submit:hover {
-  background-color: wheat;
+.action_button:hover {
+  background-color: var(--accent-soft);
+  color: #f9fafb;
 }
 
-.small_header{
+/* Headings & username */
+.small_header {
   font: 30px sans-serif;
-  color:azure;
-  margin: .5cm;
+  color: var(--text-main);
+  margin: 0.5cm;
 }
 
-.username{
+.username {
   font: 30px sans-serif;
-  color:azure;
-  margin: .5cm;
-  justify-content: 'flex-end';
-  align-self:flex-end;
+  color: var(--accent);
+  margin: 0.5cm;
+  justify-content: flex-end;
+  align-self: flex-end;
 }
 
+/* Login form container */
 .login_panel {
   display: flex;
   flex-direction: column;
-  margin:auto;
   margin: 0 auto;
-  width: 50%; 
+  width: 50%;
   padding: 20px;
   flex: 1;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  vertical-align: middle;
-  
+  background-color: var(--bg-card);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Row holding label + input */
+.input_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Label styling – looks like text, not a box */
+.input_label {
+  margin: 0.5cm;
+  font-size: medium;
+  color: var(--text-main);
+  background: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+}
+
+.registerlink {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: white;
 }

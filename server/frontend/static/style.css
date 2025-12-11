@@ -7,8 +7,8 @@ img{
   border: rgb(103, 102, 105) 3px solid;
   display: flex;  
   flex-direction: column;
-  margin-left:5%;
-  margin-right:5%;
+  margin-left:4%;
+  margin-right:4%;
   margin-top: 1%;
   margin-bottom: 1%;
 }
@@ -170,4 +170,178 @@ img{
 /* generic inner padding for content inside cards */
 .card-content {
   padding: 10px 20px;
+}
+
+
+
+/* updates for the dark color scheme */
+
+/* ==== Space theme base colors ==== */
+:root {
+  --bg-main: #020617;        /* almost black, deep space */
+  --bg-card: #0b1020;        /* dark panel */
+  --border-card: #1f2937;    /* subtle border */
+  --accent: #38bdf8;         /* neon blue */
+  --accent-soft: #a855f7;    /* purple accent */
+  --text-main: #e5f3ff;      /* soft white */
+  --text-muted: #9ca3af;     /* grey */
+}
+
+/* Whole page: dark background, light text */
+body {
+  background: radial-gradient(circle at top, #0b1120 0, #020617 50%, #000 100%);
+  color: var(--text-main);
+}
+
+/* Main cards: dark panels with soft glow */
+.card {
+  background-color: var(--bg-card);
+  border-color: var(--border-card);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Generic content padding already exists, just works better now */
+.card-content, .card-body {
+  padding: 20px 32px;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border-color: var(--bg-card);
+}
+
+/* Details text (About, Contact right side, etc.) */
+.details {
+  font-size: 20px;
+  color: var(--text-main);
+  padding: 20px;
+}
+
+/* Section titles (“About Us”, etc.) */
+.title {
+  font-size: 20px;
+  background: linear-gradient(90deg, #0b3b66, #1d4ed8, #38bdf8);
+  color: #ffffff;
+  text-align: center;
+  margin: 20px;
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+/* Headings used in various spots */
+.small_header,
+.banner h1 {
+  font: 30px sans-serif;
+  color: #ffffff;
+}
+
+/* Any generic text that used to be black */
+.username {
+  font: 30px sans-serif;
+  color: var(--accent);
+}
+
+/* Links on homepage / nav area */
+.homepage_links {
+  color: var(--accent);
+  padding: 25%;
+  font-size: larger;
+  text-decoration: none;
+}
+
+.homepage_links:hover {
+  color: var(--accent-soft);
+  text-decoration: underline;
+}
+
+/* Navbar items */
+.nav_item {
+  margin-left: 15px;
+  font-size: 20px;
+  color: #e5f3ff;
+  align-self: center;
+}
+
+/* If your navbar uses Bootstrap's .navbar, space-ify it */
+.navbar {
+  background: linear-gradient(90deg, #020617, #0b3b66, #111827) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.navbar .nav-link,
+.navbar h2,
+.navbar-brand {
+  color: #e5f3ff !important;
+}
+
+.navbar .nav-link.active {
+  color: var(--accent) !important;
+}
+
+.form_panel {
+  color: var(--text-main);
+  background: radial-gradient(circle at top, #111827, #020617);
+  border: 1px solid #1f2937;
+}
+
+/* Neon contact icon stays, just matches theme */
+.img_icon {
+  align-self: center;
+  width: 40px;
+  background: #0ea5e9;
+  color: #f9fafb;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.8);
+}
+
+/* Contact page icon is already bigger + glowy, this just fits palette */
+.contact-icon {
+  background: #0ea5e9;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.9);
+}
+
+
+/* Force Login / Register / Logout links in navbar to use space theme */
+.navbar-text .homepage_links {
+  color: var(--accent) !important;
+  padding: 0 0.5rem;
+  font-size: larger;
+  text-decoration: none;
+}
+
+.navbar-text .homepage_links:hover {
+  color: var(--accent-soft) !important;
+  text-decoration: underline;
+}
+
+.corporate {
+  font-style: normal;
+}
+
+.corporate-title {
+  font-style: bold;
+  font-size: larger;
+  font-family: "Times New Roman", Times, serif
+}
+
+.corporate-email {
+  font-style: italic;
+  font-size: smaller;
+}
+
+/* About page staff cards: make them closer & wider */
+.banner + div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Only the inner staff cards inside that row */
+.banner + div .card {
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  width: 30% !important;  /* override the inline 33% */
 }

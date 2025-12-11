@@ -32,6 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    'usedspaceships.galaxy.com',
     (
         'https://helen12-8000.theianext-1-labs-prod-'
         'misc-tools-us-east-0.proxy.cognitiveclass.ai/'
@@ -39,6 +40,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    'http://usedspaceships.galaxy.com',
     (
         'https://helen12-8000.theianext-1-labs-prod-'
         'misc-tools-us-east-0.proxy.cognitiveclass.ai/'
