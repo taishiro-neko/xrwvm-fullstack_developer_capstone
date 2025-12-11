@@ -4,6 +4,16 @@ import json
 app = Flask("Sentiment Analyzer")
 
 sia = SentimentIntensityAnalyzer()
+# Add / override words manually
+extra_words = {
+    "fast": 2.0,
+    "slow": -2.0,
+    "overpriced": -2.5,
+    "reliable": 1.7,
+    "unreliable": -2.2,
+}
+
+sia.lexicon.update(extra_words)
 
 
 @app.get('/')
