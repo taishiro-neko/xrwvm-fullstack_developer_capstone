@@ -25,17 +25,31 @@ const PostReview = () => {
   const postreview = async ()=>{
     let name = sessionStorage.getItem("firstname")+" "+sessionStorage.getItem("lastname");
     //If the first and second name are stores as null, use the username
+    console.log("User full name: " + name);
     if(name.includes("null")) {
       name = sessionStorage.getItem("username");
     }
+    console.log("Username: " + name);
+
     if(!model || review === "" || date === "" || year === "" || model === "") {
       alert("All details are mandatory")
       return;
     }
 
-    let model_split = model.split(" ");
-    let make_chosen = model_split[0];
-    let model_chosen = model_split[1];
+    /* fix the names which can be more than 2 words now */
+    let parts = model.split(" ").filter(Boolean); // remove extra spaces
+    let make_chosen;
+    let model_chosen;
+
+    if (parts.length <= 2) {
+      // old simple case
+      make_chosen = parts[0] || "";
+      model_chosen = parts[1] || "";
+    } else {
+      // first two words = make, the rest = model
+      make_chosen = parts.slice(0, 2).join(" ");
+      model_chosen = parts.slice(2).join(" ");
+    }
 
     let jsoninput = JSON.stringify({
       "name": name,
