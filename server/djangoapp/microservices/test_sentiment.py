@@ -27,10 +27,22 @@ if __name__ == "__main__":
     else:
         # No args: run a few predefined test reviews
         test_phrases = [
-            "Amazing ship, smooth flight and very fast hyperdrive. I’m extremely happy with my purchase.",  # noqa
-            "Great value, comfortable cabin, and the engine is reliable. I would definitely buy here again.",  #noqa
-            "Terrible quality, the reactor failed on the second trip. I’m very disappointed.", #noqa 
-            "The ship is slow, noisy, and overpriced. I regret buying it.", #noqa
+            (
+                "Amazing ship, smooth flight and very fast hyperdrive. "
+                "I'm extremely happy with my purchase."
+            ),
+            (
+                "Great value, comfortable cabin, and the engine is reliable. "
+                "I would definitely buy here again."
+            ),
+            (
+                "Terrible quality, the reactor failed on the second trip. "
+                "I'm very disappointed."
+            ),
+            (
+                "The ship is slow, noisy, and overpriced. "
+                "I regret buying it."
+            ),
         ]
         for phrase in test_phrases:
             analyze(phrase)
